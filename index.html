@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Método Persaltum – Dejá de adivinar cómo vender online</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Dejá de adivinar cómo vender online y empezá a usar un sistema simple con el Método Persaltum: PDF + video explicativo."
+  />
+  <style>
+    :root {
+      --bg: #050509;
+      --card: #111119;
+      --accent: #f5c14f;
+      --accent-soft: rgba(245, 193, 79, 0.08);
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border: #1f2933;
+      --danger: #ef4444;
+      --success: #22c55e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #1f2933 0, #050509 45%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(5, 5, 9, 0.9);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .brand-title {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .brand-subtitle {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .nav-pill {
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      background: linear-gradient(
+        120deg,
+        rgba(245, 193, 79, 0.1),
+        rgba(15, 23, 42, 0.8)
+      );
+      font-size: 0.7rem;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      white-space: nowrap;
+    }
+
+    .nav-pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--success);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.35);
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 840px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.7rem;
+      font-weight: 500;
+      margin-bottom: 0.9rem;
+    }
+
+    .eyebrow-badge {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #fef3c7, #f59e0b 50%, #78350f 100%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: #111827;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-lead {
+      color: var(--muted);
+      font-size: 0.98rem;
+      max-width: 34rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-section-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    ul.hero-list {
+      list-style: none;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-list-bullet {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #fef3c7, #f59e0b 50%, #92400e 100%);
+      margin-top: 0.28rem;
+      flex-shrink: 0;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border-radius: 999px;
+      padding: 0.65rem 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.18s ease-out;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #facc15, #f97316);
+      color: #111827;
+      box-shadow: 0 18px 45px rgba(248, 250, 252, 0.12);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 50px rgba(248, 250, 252, 0.16);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: var(--accent-soft);
+    }
+
+    .btn-icon {
+      font-size: 1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, #1f2933 0, #020617 55%);
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 1.4rem 1.4rem 1.5rem;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .price-tag {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.45rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .price-main {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .price-caption {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .badge-inline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.78rem;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+
+    .benefits-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .benefits-list {
+      list-style: none;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.1rem;
+    }
+
+    .benefits-list li {
+      display: flex;
+      gap: 0.45rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .benefits-check {
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+
+    .payments-title {
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 0.55rem;
+      margin-top: 0.2rem;
+    }
+
+    .pay-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.45rem;
+      margin-bottom: 0.8rem;
+    }
+
+    @media (min-width: 540px) {
+      .pay-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .pay-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      padding: 0.55rem 0.75rem;
+      border-radius: 0.8rem;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.96);
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.16s ease-out;
+    }
+
+    .pay-btn:hover {
+      border-color: var(--accent-soft);
+      background: rgba(15, 23, 42, 1);
+      transform: translateY(-1px);
+    }
+
+    .pay-main {
+      font-weight: 600;
+      font-size: 0.82rem;
+    }
+
+    .pay-sub {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .pay-pill {
+      font-size: 0.7rem;
+      padding: 0.18rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(31, 41, 55, 0.9);
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .pay-secure {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .lock {
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    .whatsapp-box {
+      border-radius: 0.9rem;
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.2), #020617 55%);
+      padding: 0.6rem 0.75rem;
+      font-size: 0.8rem;
+      color: #bbf7d0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .whatsapp-link-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .whatsapp-pill {
+      font-size: 0.7rem;
+      padding: 0.18rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(22, 101, 52, 0.7);
+      border: 1px solid rgba(74, 222, 128, 0.5);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .whatsapp-pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .section {
+      margin-top: 2.75rem;
+    }
+
+    .section h2 {
+      font-size: 1.15rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .cols-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
+      gap: 1.8rem;
+    }
+
+    @media (max-width: 840px) {
+      .cols-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .tagline {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.65rem;
+    }
+
+    .section p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .pill-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+    }
+
+    .pill-list li {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 1.6rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 840px) {
+      .faq-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .faq-item h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .faq-item p {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    footer {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+    }
+
+    footer a {
+      text-decoration: underline;
+      text-decoration-color: rgba(148, 163, 184, 0.5);
+      text-decoration-thickness: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <nav class="nav">
+        <div class="brand">
+          <div class="brand-title">PERSALTUM</div>
+          <div class="brand-subtitle">Universidad Digital del Infoproducto</div>
+        </div>
+        <div class="nav-pill">
+          <span class="nav-pill-dot"></span>
+          Lanzamiento online – Acceso inmediato
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="eye
