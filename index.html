@@ -17,7 +17,6 @@
       --text: #f9fafb;
       --muted: #9ca3af;
       --border: #1f2933;
-      --danger: #ef4444;
       --success: #22c55e;
     }
 
@@ -166,7 +165,7 @@
       color: var(--muted);
       font-size: 0.98rem;
       max-width: 34rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
     }
 
     .hero-section-title {
@@ -177,7 +176,7 @@
 
     ul.hero-list {
       list-style: none;
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.4rem;
     }
 
     .hero-list li {
@@ -203,7 +202,7 @@
       flex-wrap: wrap;
       gap: 0.75rem;
       align-items: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
     }
 
     .btn {
@@ -272,8 +271,32 @@
       background: radial-gradient(circle at top left, #1f2933 0, #020617 55%);
       border-radius: 1rem;
       border: 1px solid var(--border);
-      padding: 1.4rem 1.4rem 1.5rem;
+      padding: 1.2rem 1.2rem 1.3rem;
       box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: 0.8rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #020617;
+      margin-top: 0.5rem;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-label {
+      font-size: 0.8rem;
+      color: var(--muted);
     }
 
     .price-tag {
@@ -305,7 +328,7 @@
     .card-text {
       font-size: 0.9rem;
       color: var(--muted);
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
 
     .badge-inline {
@@ -357,7 +380,7 @@
       font-size: 0.82rem;
       font-weight: 600;
       margin-bottom: 0.55rem;
-      margin-top: 0.2rem;
+      margin-top: 0.3rem;
     }
 
     .pay-grid {
@@ -365,12 +388,6 @@
       grid-template-columns: 1fr;
       gap: 0.45rem;
       margin-bottom: 0.8rem;
-    }
-
-    @media (min-width: 540px) {
-      .pay-grid {
-        grid-template-columns: 1fr;
-      }
     }
 
     .pay-btn {
@@ -579,6 +596,7 @@
     </header>
 
     <main>
+      <!-- HERO + VIDEO ARRIBA -->
       <section class="hero-grid">
         <div>
           <div class="eyebrow">
@@ -595,11 +613,11 @@
           </p>
 
           <div>
-            <div class="hero-section-title">Mirá el VSL completo antes de decidir</div>
+            <div class="hero-section-title">Qué vas a entender con este material</div>
             <ul class="hero-list">
               <li>
                 <span class="hero-list-bullet"></span>
-                <span>Por qué hoy estás perdiendo tiempo y dinero intentando vender online.</span>
+                <span>Por qué hoy estás perdiendo tiempo y dinero intentando vender online sin un sistema.</span>
               </li>
               <li>
                 <span class="hero-list-bullet"></span>
@@ -613,17 +631,12 @@
           </div>
 
           <div class="hero-cta-row">
-            <a
-              href="https://youtu.be/SJCvhQZMuT4"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-primary"
-            >
-              <span class="btn-icon">▶</span>
-              Ver VSL del Método Persaltum
+            <a href="#comprar" class="btn btn-primary">
+              <span class="btn-icon">🛒</span>
+              Quiero el Método Persaltum (PDF + Video)
             </a>
-            <a href="#comprar" class="btn btn-ghost">
-              Ir directo a la compra
+            <a href="#video" class="btn btn-ghost">
+              Ver primero el video explicativo
             </a>
           </div>
 
@@ -633,15 +646,35 @@
           </div>
         </div>
 
-        <aside class="card" id="comprar">
+        <aside class="card" id="video">
+          <div class="hero-section-title">Video explicativo del Método Persaltum</div>
+          <p class="video-label">
+            Mirá el VSL y, si tiene sentido para vos, más abajo podés acceder al PDF completo y al video para estudiarlo
+            con calma.
+          </p>
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/SJCvhQZMuT4"
+              title="VSL Método Persaltum"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </aside>
+      </section>
+
+      <!-- SECCIÓN COMPRA -->
+      <section class="section" id="comprar">
+        <h2>Cómo accedés al Método Persaltum</h2>
+        <div class="card" style="margin-top: 1rem;">
           <div class="price-tag">Oferta lanzamiento solo online</div>
           <div class="price-row">
             <div class="price-main">USD 37</div>
             <div class="price-caption">pago único</div>
           </div>
           <p class="card-text">
-            Vas a recibir el Método Persaltum en PDF, más un video explicativo donde te muestro, paso a paso, cómo
-            dejar de improvisar y empezar a pensar tus ventas online como un sistema simple que trabaja para vos.
+            Al comprar, recibís el Método Persaltum en PDF y un video explicativo donde te muestro, paso a paso,
+            cómo dejar de improvisar y empezar a pensar tus ventas online como un sistema simple que trabaja para vos.
           </p>
 
           <div class="badge-inline">
@@ -661,7 +694,7 @@
             </li>
             <li>
               <span class="benefits-check">✓</span>
-              <span>Posibilidad de sumarte al grupo de WhatsApp para seguir recibiendo valor.</span>
+              <span>Marco estratégico para organizar tu mensaje, tu oferta y tu sistema de ventas digital.</span>
             </li>
           </ul>
 
@@ -730,9 +763,10 @@
               o querés saber si este material es para vos antes de comprar.
             </p>
           </div>
-        </aside>
+        </div>
       </section>
 
+      <!-- PARA QUIÉN ES + QUIÉN SOS -->
       <section class="section">
         <h2>¿Para quién es este método?</h2>
         <div class="cols-2">
@@ -775,9 +809,9 @@
               sistema que puedas entender y poner en práctica aunque estés empezando.
             </p>
             <p>
-              Este PDF y el video están diseñados para que tengas una base sólida: un método que ordene tus ideas,
-              tu mensaje y tu sistema de ventas, para que cada acción que hagas online tenga sentido dentro de un
-              mapa, y no sea un tiro al aire más.
+              Este PDF y el video son el primer paso de todo lo que se viene dentro de la Universidad Digital del
+              Infoproducto: una base sólida sobre la cual después vas a poder construir sistemas más avanzados,
+              automatizaciones y productos escalables.
             </p>
 
             <ul class="pill-list">
@@ -791,6 +825,7 @@
         </div>
       </section>
 
+      <!-- FAQ -->
       <section class="section">
         <h2>Preguntas frecuentes rápidas</h2>
         <div class="faq-grid">
